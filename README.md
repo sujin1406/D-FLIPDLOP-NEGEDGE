@@ -28,17 +28,77 @@ Next state of D flip-flop is always equal to data input, D for every positive tr
 
 **Procedure**
 
-/* write all the steps invloved */
+1. Open Quartus Prime software.
+
+2. Create a new project using **New Project Wizard**.
+
+3. Enter the project name, project location, and select the FPGA device.
+
+4. Create a new Verilog HDL file using
+   **File → New → Verilog HDL File**.
+
+5. Write the Verilog program for the D Flip-Flop.
+
+6. Save the file with the appropriate module name
+   (Example: `DFF.v`).
+
+7. Set the Verilog file as the **Top-Level Entity**.
+
+8. Compile the design using
+   **Processing → Start Compilation**.
+
+9. Check whether the compilation is successful without errors.
+
+10. Create a testbench file or waveform input file for simulation.
+
+11. Apply different input values to **D** along with clock pulses.
+
+12. Run the simulation and observe the outputs **Q** and **Qbar**.
+
+13. Verify the output waveform using the D Flip-Flop truth table.
+
+14. Observe the RTL schematic and timing diagram generated after simulation.
+
+15. Conclude the experiment after verifying the correct operation of the D Flip-Flop.
+
 
 **PROGRAM**
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+Developed by: Sujin M L
+
+RegisterNumber: 212225040435
+
+```
+module D8(D, clk, Q, Qbar);
+
+input D, clk;
+output reg Q;
+output Qbar;
+
+assign Qbar = ~Q;
+
+initial
+begin
+    Q = 0;
+end
+
+always @(posedge clk)
+begin
+    Q <= D;
+end
+
+endmodule
+```
+
 
 **RTL LOGIC FOR FLIPFLOPS**
 
+<img width="1919" height="1076" alt="Screenshot 2026-05-24 153932" src="https://github.com/user-attachments/assets/49aef355-0f6f-4f44-990a-2ec7b89df852" />
+
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
-
+<img width="1919" height="1079" alt="Screenshot 2026-05-24 154034" src="https://github.com/user-attachments/assets/368aaa92-57b9-4412-aad9-75389d831c68" />
 
 **RESULTS**
+
+Thus, the D Flip-Flop was successfully implemented using Verilog HDL and its functionality was verified using simulation results.
